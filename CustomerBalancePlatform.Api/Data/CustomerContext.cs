@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CustomerBalancePlatform.Api.Models;
+using System;
 
 namespace CustomerBalancePlatform.Api.Data
 {
@@ -9,7 +10,7 @@ namespace CustomerBalancePlatform.Api.Data
 		{
 		}
 
-		public DbSet<Customer> Customers { get; set; }
-		public DbSet<AuditTrail> AuditTrails { get; set; }
+		public DbSet<Customer>? Customers { get; set; }
+		public DbSet<AuditTrail>? AuditTrails { get; set; }
 	}
 }
