@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace CustomerBalancePlatform.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/customers")]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerRepository _repository;
