@@ -21,25 +21,27 @@ contact information, current balance and the last transaction date.
 
 ### Project Setup
 
-- Create new directory and navigate into it
-  `mkdir CustomerBalancePlatform`
-  `cd CustomerBalancePlatform`
+- Create new directory and navigate into it  
+  `mkdir CustomerBalancePlatform`  
+  `cd CustomerBalancePlatform`  
   `dotnet new sln -n CustomerBalancePlatform` # Create solution
 
-- Create new ASP.NET Core Web API project
-  `dotnet new webapi -o CustomerBalancePlatform.Api`
-  `dotnet sln add CustomerBalancePlatform.Api`
+- Create new ASP.NET Core Web API project  
+  `dotnet new webapi -o CustomerBalancePlatform.Api`  
+  `dotnet sln add CustomerBalancePlatform.Api`  
 
-- Add Entity Framework in CustomerBalancePlatform.Api directory
-  `cd CustomerBalancePlatform.Api`
-  `dotnet add package Microsoft.EntityFrameworkCore --version 6.0.0`
-  `dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0`
-  `dotnet add package Microsoft.EntityFrameworkCore.Tools --version 6.0.0`
-  `dotnet add package Swashbuckle.AspNetCore`
+- Add Entity Framework in CustomerBalancePlatform.Api directory  
+  `cd CustomerBalancePlatform.Api`  
+  `dotnet add package Microsoft.EntityFrameworkCore --version 6.0.0`  
+  `dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0`  
+  `dotnet add package Microsoft.EntityFrameworkCore.Tools --version 6.0.0`  
+  `dotnet add package Swashbuckle.AspNetCore`  
 
-`
-[
-  {
+
+Resluts of get customers - [GET] `http://localhost:7092/api/v1/customers`
+``` json
+[  
+  {  
     "customerNumber": "CUS10",
     "name": "John Doe",
     "description": null,
@@ -48,7 +50,7 @@ contact information, current balance and the last transaction date.
     "lastTransactionDate": null
   }  
 ]
-`
+```
 
 ## Future Updates
 
@@ -56,4 +58,4 @@ contact information, current balance and the last transaction date.
 
 ## Database - SQL Server Instance
 
-[image](Screenshot%202024-11-03%20at%206.10.18 AM.png)
+![SQL Server Instamce image](Screenshot%202024-11-03%20at%206.10.18 AM.png)
