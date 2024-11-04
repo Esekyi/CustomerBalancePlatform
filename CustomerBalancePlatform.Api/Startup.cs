@@ -1,6 +1,7 @@
 using CustomerBalancePlatform.Api.Data;
 using CustomerBalancePlatform.Api.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace CustomerBalancePlatform.Api
 {
@@ -25,15 +26,33 @@ namespace CustomerBalancePlatform.Api
 
             // Add MVC services
             services.AddControllers();
+
+            // Adding Swagger documentation
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Customer Balance Platform API",
+                    Version = "v1",
+                    Description = "API for managing customer records and balances."
+                });
+            });
         }
 
-        // Configure the HTTP request pipeline
+        // HTTP request pipeline
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Customer Balance Platform API V1");
+                    c.RoutePrefix = string.Empty; // Swagger UI to root URL
+                });
             }
+
 
             app.UseRouting();
 
